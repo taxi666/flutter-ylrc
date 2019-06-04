@@ -1,0 +1,1 @@
+../../../../../../../flutter/.pub-cache/hosted/pub.flutter-io.cn/video_player-0.10.0+2/ios/Classes/VideoPlayerPlugin.h

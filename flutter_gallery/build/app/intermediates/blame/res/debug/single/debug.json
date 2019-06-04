@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_foreground.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xhdpi/ic_foreground.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_background.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-hdpi/ic_background.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_foreground.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-hdpi/ic_foreground.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_foreground.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxhdpi/ic_foreground.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_background.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xhdpi/ic_background.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_background.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxhdpi/ic_background.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_background.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxxhdpi/ic_background.png"
+    },
+    {
+        "merged": "/Users/meng/development/flutter-ylrc/flutter_gallery/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_foreground.png.flat",
+        "source": "/Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/res/mipmap-xxxhdpi/ic_foreground.png"
+    }
+]

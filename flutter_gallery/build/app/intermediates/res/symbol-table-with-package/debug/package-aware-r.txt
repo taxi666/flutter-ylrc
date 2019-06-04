@@ -1,0 +1,4 @@
+io.flutter.demo.gallery
+mipmap ic_background
+mipmap ic_foreground
+mipmap ic_launcher

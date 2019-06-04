@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":102001000,"versionName":"1.2.1","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"io.flutter.demo.gallery","split":"","minSdkVersion":"16"}}]

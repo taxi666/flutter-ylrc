@@ -1,0 +1,3 @@
+int mipmap ic_background 0x7f010000
+int mipmap ic_foreground 0x7f010001
+int mipmap ic_launcher 0x7f010002

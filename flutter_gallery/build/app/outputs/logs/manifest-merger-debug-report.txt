@@ -1,0 +1,117 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+MERGED from [:video_player] /Users/meng/development/flutter-ylrc/flutter_gallery/build/video_player/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
+MERGED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-10:12
+MERGED from [:device_info] /Users/meng/development/flutter-ylrc/flutter_gallery/build/device_info/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.1.aar/250ad01b498e03611b43b14d04bc4587/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.1.aar/4adc7e3822c4cca7fe10ec285c171a04/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.1.aar/cd6303ae0cd9db55730c257e57f3f099/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.1.aar/2372c94824e5f196756d7a6caf9ce6f2/AndroidManifest.xml:17:1-26:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+	package
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:7:5-38
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:1-33:12
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:6:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:13:5-66
+	android:name
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:13:22-64
+application
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:20:5-32:19
+MERGED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+	android:label
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:20:67-90
+	android:icon
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:20:91-125
+	android:name
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:20:18-66
+activity#io.flutter.demo.gallery.MainActivity
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:21:9-31:20
+	android:launchMode
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:22:19-49
+	android:hardwareAccelerated
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:25:19-53
+	android:windowSoftInputMode
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:26:19-61
+	android:configChanges
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:24:19-150
+	android:theme
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:23:19-72
+	android:name
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:21:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+MERGED from [:video_player] /Users/meng/development/flutter-ylrc/flutter_gallery/build/video_player/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:video_player] /Users/meng/development/flutter-ylrc/flutter_gallery/build/video_player/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:device_info] /Users/meng/development/flutter-ylrc/flutter_gallery/build/device_info/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:device_info] /Users/meng/development/flutter-ylrc/flutter_gallery/build/device_info/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.1.aar/250ad01b498e03611b43b14d04bc4587/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.1.aar/250ad01b498e03611b43b14d04bc4587/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.1.aar/4adc7e3822c4cca7fe10ec285c171a04/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.1.aar/4adc7e3822c4cca7fe10ec285c171a04/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.1.aar/cd6303ae0cd9db55730c257e57f3f099/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.1.aar/cd6303ae0cd9db55730c257e57f3f099/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.1.aar/2372c94824e5f196756d7a6caf9ce6f2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.1.aar/2372c94824e5f196756d7a6caf9ce6f2/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/meng/development/flutter-ylrc/flutter_gallery/android/app/src/main/AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
+ADDED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] /Users/meng/development/flutter-ylrc/flutter_gallery/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-92
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.1.aar/2372c94824e5f196756d7a6caf9ce6f2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.1] /Users/meng/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.1.aar/2372c94824e5f196756d7a6caf9ce6f2/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-76
+	android:name
+		ADDED from [:connectivity] /Users/meng/development/flutter-ylrc/flutter_gallery/build/connectivity/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:22-73
