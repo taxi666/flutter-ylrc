@@ -1,15 +1,14 @@
 import '../utils/fetch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'GoTest.dart';
-import 'TestCenterHistory.dart';
+import 'GoTestHistory.dart';
 
-class NewRouteTestCenter extends StatefulWidget {
+class NewRouteTestCenterHistory extends StatefulWidget {
   @override
   _LoginViewState createState() => _LoginViewState();
 }
 
-class _LoginViewState extends State<NewRouteTestCenter> {
+class _LoginViewState extends State<NewRouteTestCenterHistory> {
   List subjects = [];
   String title = '';
 
@@ -17,48 +16,12 @@ class _LoginViewState extends State<NewRouteTestCenter> {
   void initState() {
     loadData();
   }
-  void goHistory(){
-    Navigator.push(context,
-          new MaterialPageRoute(builder: (context) {
-            return new NewRouteTestCenterHistory();
-          }));
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('考试中心',style: TextStyle(
-                              fontSize:22,
-                            )),
-        actions: <Widget>[
-            GestureDetector(
-                          onTap:goHistory,
-                          child: Container(
-                            padding: const EdgeInsets.only(right: 18),
-                            child:Row(
-                              children:[
-                                RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:20
-                                        ),
-                                        text: '考试历史',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ]
-                            )
-                          ),
-                        ),
-          ],
+        title: Text(title),
       ),
       body: Center(
         child: getBody(),
@@ -67,7 +30,7 @@ class _LoginViewState extends State<NewRouteTestCenter> {
   }
 
   loadData() async {
-    String loadRUL = '/exam/student/paper/list';
+    String loadRUL = '/exam/student/history/list';
     var result =
         await HttpUtils.request(loadRUL, method: HttpUtils.POST, data: {});
     var data = result['data'];
@@ -107,27 +70,27 @@ class _LoginViewState extends State<NewRouteTestCenter> {
                         color: Colors.black,
                         fontSize: 28,
                       ),
-                      text: '暂无待考信息'),
+                      text: '暂无考试历史'),
                 ],
               ),
             ),
           ),
-          Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.only(top: 16.0),
-            child: RichText(
-              text: TextSpan(
-                children: <TextSpan>[
-                  TextSpan(
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                      text: '请等待教师分配'),
-                ],
-              ),
-            ),
-          ),
+          // Container(
+          //   alignment: Alignment.center,
+          //   padding: const EdgeInsets.only(top: 16.0),
+          //   child: RichText(
+          //     text: TextSpan(
+          //       children: <TextSpan>[
+          //         TextSpan(
+          //             style: TextStyle(
+          //               color: Colors.black,
+          //               fontSize: 16,
+          //             ),
+          //             text: '请等待教师分配'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -158,26 +121,7 @@ class _LoginViewState extends State<NewRouteTestCenter> {
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-            alignment: Alignment.centerLeft,
-            
-            child: Text('考试科目：${subject['courseName']}',  
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 18,
-                  )
-                ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 4.0, bottom: 4.0),
-            alignment: Alignment.centerLeft,
-            child: Text('考试时长：${subject['examPaperTime']}分钟',
-                style: TextStyle(
-                    fontSize: 18,
-                  ),
-                textAlign: TextAlign.start),
-          ),
+          
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
@@ -199,16 +143,17 @@ class _LoginViewState extends State<NewRouteTestCenter> {
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
-            child: Text('难易程度：${subject['examPaperEasyText']}',
+            child: Text('得分：${subject['examScore']}',
             style: TextStyle(
                     fontSize: 18,
                   ),
                 textAlign: TextAlign.start),
           ),
+          
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
-            child: Text('开始时间：${subject['beginTime']}',
+            child: Text('考试时间：${subject['beginTime']}',
             style: TextStyle(
                     fontSize: 18,
                   ),
@@ -221,9 +166,9 @@ class _LoginViewState extends State<NewRouteTestCenter> {
                 Expanded(
                   child: RaisedButton(
                     padding: EdgeInsets.all(15.0),
-                    child: Text("进入考试",
+                    child: Text("回顾试卷",
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize:22,
                         )),
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,
@@ -232,7 +177,7 @@ class _LoginViewState extends State<NewRouteTestCenter> {
                       //print(Form.of(context));
                       Navigator.push(context,
                           new MaterialPageRoute(builder: (context) {
-                        return new NewRouteGoTest(
+                        return new NewRouteGoHistoryTest(
                             planId: subject['examPlanId'],
                             paperId: subject['examPaperId']
                           );

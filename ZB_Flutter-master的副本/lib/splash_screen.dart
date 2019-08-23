@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
 
-    _controller = AnimationController(vsync: this, duration: Duration(milliseconds:200));
+    _controller = AnimationController(vsync: this, duration: Duration(milliseconds:1));
     _animation = Tween(begin: 0.0, end: 1.0).animate(_controller);
 
     /* 动画事件监听器
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       opacity: _animation, // 执行动画
       child: 
       Image.asset(
-        'images/screen.png',
+        'images/screen.jpeg',
         scale: 2.0, // 缩放
         fit: BoxFit.cover,  // 充满容器
       ),

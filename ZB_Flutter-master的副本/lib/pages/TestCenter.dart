@@ -2,7 +2,6 @@ import '../utils/fetch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'GoTest.dart';
-import 'TestCenterHistory.dart';
 
 class NewRouteTestCenter extends StatefulWidget {
   @override
@@ -17,48 +16,12 @@ class _LoginViewState extends State<NewRouteTestCenter> {
   void initState() {
     loadData();
   }
-  void goHistory(){
-    Navigator.push(context,
-          new MaterialPageRoute(builder: (context) {
-            return new NewRouteTestCenterHistory();
-          }));
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('考试中心',style: TextStyle(
-                              fontSize:22,
-                            )),
-        actions: <Widget>[
-            GestureDetector(
-                          onTap:goHistory,
-                          child: Container(
-                            padding: const EdgeInsets.only(right: 18),
-                            child:Row(
-                              children:[
-                                RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:20
-                                        ),
-                                        text: '考试历史',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ]
-                            )
-                          ),
-                        ),
-          ],
+        title: Text(title),
       ),
       body: Center(
         child: getBody(),
@@ -121,7 +84,7 @@ class _LoginViewState extends State<NewRouteTestCenter> {
                   TextSpan(
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 22,
+                        fontSize: 16,
                       ),
                       text: '请等待教师分配'),
                 ],
@@ -139,9 +102,9 @@ class _LoginViewState extends State<NewRouteTestCenter> {
       margin: new EdgeInsets.fromLTRB(4, 4, 4, 4),
       child: Column(
         children: <Widget>[
-          // new Image.network(
-          //   'https://piao-cdn.o2o.cmbchina.com/images/20180730-193924_750_292_17716ccc56d040ba966cc7281c4baf72.jpg',
-          // ),
+          new Image.network(
+            'https://piao-cdn.o2o.cmbchina.com/images/20180730-193924_750_292_17716ccc56d040ba966cc7281c4baf72.jpg',
+          ),
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.only(top: 16.0),
@@ -161,57 +124,37 @@ class _LoginViewState extends State<NewRouteTestCenter> {
           Container(
             padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
-            
-            child: Text('考试科目：${subject['courseName']}',  
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 18,
-                  )
-                ),
+            child: Text('考试科目：${subject['courseName']}',
+                textAlign: TextAlign.start),
           ),
           Container(
             padding: const EdgeInsets.only(top: 4.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
             child: Text('考试时长：${subject['examPaperTime']}分钟',
-                style: TextStyle(
-                    fontSize: 18,
-                  ),
                 textAlign: TextAlign.start),
           ),
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
             child: Text('题目数量：${subject['subjectNum']}',
-            style: TextStyle(
-                    fontSize: 18,
-                  ),
                 textAlign: TextAlign.start),
           ),
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
             child: Text('总分：${subject['examPaperScore']}',
-            style: TextStyle(
-                    fontSize: 18,
-                  ),
                 textAlign: TextAlign.start),
           ),
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
             child: Text('难易程度：${subject['examPaperEasyText']}',
-            style: TextStyle(
-                    fontSize: 18,
-                  ),
                 textAlign: TextAlign.start),
           ),
           Container(
             padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
             alignment: Alignment.centerLeft,
             child: Text('开始时间：${subject['beginTime']}',
-            style: TextStyle(
-                    fontSize: 18,
-                  ),
                 textAlign: TextAlign.start),
           ),
           Padding(
@@ -223,7 +166,7 @@ class _LoginViewState extends State<NewRouteTestCenter> {
                     padding: EdgeInsets.all(15.0),
                     child: Text("进入考试",
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 18,
                         )),
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,

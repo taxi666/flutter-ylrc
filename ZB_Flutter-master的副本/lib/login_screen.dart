@@ -55,7 +55,7 @@ class _LoginViewState extends State<LoginView> {
           timeInSecForIos: 1,
           backgroundColor: Colors.black,
           textColor: Colors.white,
-          fontSize: 22.0
+          fontSize: 16.0
         );
     }
   }
@@ -123,7 +123,6 @@ class _LoginViewState extends State<LoginView> {
               prefixIcon: Icon(Icons.email),
               fillColor: Colors.white70,
               filled: true,
-              
               labelText: '请输入密码'
           ),
           //校验密码

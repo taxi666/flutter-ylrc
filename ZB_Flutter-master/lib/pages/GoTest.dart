@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:async';
 
-
 class NewRouteGoTest extends StatefulWidget {
   var planId;
   var paperId;
@@ -23,37 +22,41 @@ class GoTestViewState extends State<NewRouteGoTest> {
       results[index]['result'] = e;
     });
   }
-  void updateCheckboxStatus(bool e, var index,var index0) {
+
+  void updateCheckboxStatus(bool e, var index, var index0) {
     setState(() {
       results[index]['checkedList'][index0] = e;
     });
   }
-  void updateTextValue(String e, var index){
-     setState(() {
+
+  void updateTextValue(String e, var index) {
+    setState(() {
       results[index]['result'] = e;
     });
   }
+
   ///上一题
   void goPrev() {
     setState(() {
       nowIndex = nowIndex > 0 ? --nowIndex : 0;
-      ansNum=computeNum();
+      ansNum = computeNum();
     });
   }
 
   ///下一题
   void goNext() {
     setState(() {
-      nowIndex =nowIndex < results.length - 1 ? ++nowIndex : results.length - 1;
-      ansNum=computeNum();
+      nowIndex =
+          nowIndex < results.length - 1 ? ++nowIndex : results.length - 1;
+      ansNum = computeNum();
     });
   }
 
   String title = '';
-  int valTime=0;
-  int allNum=0;
-  int ansNum=0;
-  String valTimeTxt='';
+  int valTime = 0;
+  int allNum = 0;
+  int ansNum = 0;
+  String valTimeTxt = '';
   var planId;
   var paperId;
   var loaded = false;
@@ -62,71 +65,84 @@ class GoTestViewState extends State<NewRouteGoTest> {
 
   //计算剩余时间
   String resultFormat(result) {
-    var m =(result/60).toInt();
-    var s=result%60;
-    String r='';
-    r=m.toString()+'"'+s.toString()+'\'';
+    var m = (result / 60).toInt();
+    var s = result % 60;
+    String r = '';
+    r = m.toString() + '"' + s.toString() + '\'';
     return r;
-  } 
-  void computTime() {
-    _countdownTimer=new Timer.periodic(new Duration(seconds: 1), (timer) {
-      setState(() {
-        if(valTime>1)valTime=valTime-1;
-        else {
-          valTime=0;
-        }
-        valTimeTxt=resultFormat(valTime);
-      });
+  }
 
+  void computTime() {
+    _countdownTimer = new Timer.periodic(new Duration(seconds: 1), (timer) {
+      setState(() {
+        if (valTime > 1)
+          valTime = valTime - 1;
+        else {
+          valTime = 0;
+        }
+        valTimeTxt = resultFormat(valTime);
+      });
     });
   }
+
   //计算已答题个数
   int computeNum() {
-    int r=0;
-    results.asMap().forEach((index,item){
-      if(subjects[index]['subjectType']=='0' || subjects[index]['subjectType']=='2'){
-        if(item['result']!=''){
-          r++;return;
+    int r = 0;
+    results.asMap().forEach((index, item) {
+      if (subjects[index]['subjectType'] == '0' ||
+          subjects[index]['subjectType'] == '2') {
+        if (item['result'] != '') {
+          r++;
+          return;
         }
-      }
-      else if(subjects[index]['subjectType']=='1'){
-        if(item['checkedList'][0]){
+      } else if (subjects[index]['subjectType'] == '1') {
+        if (item['checkedList'][0]) {
           print(item['checkedList'][0]);
-          r++;return;
+          r++;
+          return;
         }
-        if(item['checkedList'][1]){
-          r++;return;
+        if (item['checkedList'][1]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][2]){
-          r++;return;
+        if (item['checkedList'][2]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][3]){
-          r++;return;
+        if (item['checkedList'][3]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][4]){
-          r++;return;
+        if (item['checkedList'][4]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][5]){
-          r++;return;
+        if (item['checkedList'][5]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][6]){
-          r++;return;
+        if (item['checkedList'][6]) {
+          r++;
+          return;
         }
-        if(item['checkedList'][7]){
-          r++;return;
+        if (item['checkedList'][7]) {
+          r++;
+          return;
         }
       }
     });
 
-    return r>allNum?allNum:r;
-  } 
+    return r > allNum ? allNum : r;
+  }
+
   @override
   void initState() {
     super.initState();
     loadData();
   }
+
   // 不要忘记在这里释放掉Timer
- @override
+  @override
   void dispose() {
     _countdownTimer?.cancel();
     _countdownTimer = null;
@@ -139,7 +155,7 @@ class GoTestViewState extends State<NewRouteGoTest> {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('剩余时间：'+valTimeTxt),
+        title: Text('剩余时间：' + valTimeTxt),
       ),
       body: ConstrainedBox(
         constraints: BoxConstraints.expand(),
@@ -157,46 +173,44 @@ class GoTestViewState extends State<NewRouteGoTest> {
               left: 0.0,
               top: 0,
               child: Container(
-                width: screenWidth,
-                color: Colors.black12,
-                alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(
-                    top: 6.0, left: 12.0, right: 6.0, bottom: 6.0),
-                child:new Row(        //行控件
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,      //对齐方式：平均间隔
+                  width: screenWidth,
+                  color: Colors.black12,
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(
+                      top: 6.0, left: 12.0, right: 6.0, bottom: 6.0),
+                  child: new Row(
+                      //行控件
+                      mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween, //对齐方式：平均间隔
                       children: [
                         GestureDetector(
                           onTap: submitExam,
                           child: Container(
-                            child:Row(
-                              children:[
-                                Icon(Icons.check,color: Colors.redAccent),
-                                RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        style: TextStyle(
-                                          color: Colors.redAccent,
-                                        ),
-                                        text: '点击交卷',
-                                      ),
-                                    ],
-                                  ),
+                              child: Row(children: [
+                            Icon(Icons.check, color: Colors.redAccent),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 22,
                                 ),
-                              ]
-                            )
-                          ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    style: TextStyle(
+                                      color: Colors.redAccent,
+                                    ),
+                                    text: '点击交卷',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ])),
                         ),
-                        
                         RichText(
                           text: TextSpan(
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 22,
                             ),
                             children: <TextSpan>[
                               TextSpan(
@@ -215,16 +229,14 @@ class GoTestViewState extends State<NewRouteGoTest> {
                                 style: TextStyle(
                                   color: Colors.black38,
                                 ),
-                                text:'/'+allNum.toString(),
+                                text: '/' + allNum.toString(),
                               ),
                             ],
                           ),
                         ),
-                      ]
-                    )
-              ),
+                      ])),
             ),
-            
+
             // Positioned(
             //     bottom: 50.0,
             //     child: Container(
@@ -259,27 +271,35 @@ class GoTestViewState extends State<NewRouteGoTest> {
         await HttpUtils.request(loadRUL, method: HttpUtils.POST, data: param);
     print('result');
     print(result);
-    
 
     if (result == null) {
       Navigator.pop(context);
       return;
     }
     var data = result['data'];
-    
+
     loaded = true;
     data["subjectList"].forEach((item) {
       Map<String, Object> map = new Map<String, Object>();
       map["subjectId"] = item["subjectId"];
       map["result"] = '';
-      map["checkedList"]=[false,false,false,false,false,false,false,false];
+      map["checkedList"] = [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ];
       map["show"] = false;
       results.add(map);
     });
     results[0]["show"] = true;
     setState(() {
       subjects = data["subjectList"];
-      allNum=subjects.length;
+      allNum = subjects.length;
       valTime = int.parse(data["expTime"]);
       computTime();
     });
@@ -288,18 +308,18 @@ class GoTestViewState extends State<NewRouteGoTest> {
   submitExam() async {
     //交卷
     String loadRUL = '/exam/student/paper/submit';
-    results.asMap().forEach((index,item){
-      if(subjects[index]['subjectType']=='1'){
-        String r='';
-        if(item['checkedList'][0])r='A,';
-        if(item['checkedList'][1])r='${r}B,';
-        if(item['checkedList'][2])r='${r}C,';
-        if(item['checkedList'][3])r='${r}D,';
-        if(item['checkedList'][4])r='${r}E,';
-        if(item['checkedList'][5])r='${r}F,';
-        if(item['checkedList'][6])r='${r}G,';
-        if(item['checkedList'][7])r='${r}H,';
-        if(r.length>0)item['result']=r.substring(0,r.length-1);
+    results.asMap().forEach((index, item) {
+      if (subjects[index]['subjectType'] == '1') {
+        String r = '';
+        if (item['checkedList'][0]) r = 'A,';
+        if (item['checkedList'][1]) r = '${r}B,';
+        if (item['checkedList'][2]) r = '${r}C,';
+        if (item['checkedList'][3]) r = '${r}D,';
+        if (item['checkedList'][4]) r = '${r}E,';
+        if (item['checkedList'][5]) r = '${r}F,';
+        if (item['checkedList'][6]) r = '${r}G,';
+        if (item['checkedList'][7]) r = '${r}H,';
+        if (r.length > 0) item['result'] = r.substring(0, r.length - 1);
       }
     });
     var param = {"examPaperId": this.paperId, "answerList": results};
@@ -316,45 +336,47 @@ class GoTestViewState extends State<NewRouteGoTest> {
     // });
   }
 
-  getDanxuanOption(subject,option,index) {
-    var t='option'+option;
-    if(subject[t] != null && subject[t]!=''){
+  getDanxuanOption(subject, option, index) {
+    var t = 'option' + option;
+    if (subject[t] != null && subject[t] != '') {
       return Container(
-      width:  MediaQuery.of(context).size.width,
-      height: 60,
-      child: Column(
-        children: <Widget>[
-          new RadioListTile<String>(
-            title: Text('${subject[t]}'),
-            value: option,
-            groupValue: results[index]['result'],
-            onChanged: (String e) => updateGroupValue(e, index),
-          )
-        ],
-      ));
-    } 
-    else {
+          width: MediaQuery.of(context).size.width,
+          height: 60,
+          child: Column(
+            children: <Widget>[
+              new RadioListTile<String>(
+                title: Text(
+                  '${subject[t]}',
+                  style: TextStyle(fontSize: 20),
+                ),
+                value: option,
+                groupValue: results[index]['result'],
+                onChanged: (String e) => updateGroupValue(e, index),
+              )
+            ],
+          ));
+    } else {
       return Container();
     }
   }
-  getDuoxuanOption(subject,option,index,oIndex) {
-    var t='option'+option;
-    if(subject[t] != null && subject[t]!=''){
-      return Container(
-                    width:MediaQuery.of(context).size.width,
-                    height: 60,
-                    child: Column(
-                      children: <Widget>[
-                        new CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title:Text('${subject[t]}'),
-                    value: results[index]['checkedList'][oIndex],
-                    onChanged: (bool) => updateCheckboxStatus(bool,index,oIndex)),
-                      ],
-                    ));
-    } 
-    else {
 
+  getDuoxuanOption(subject, option, index, oIndex) {
+    var t = 'option' + option;
+    if (subject[t] != null && subject[t] != '') {
+      return Container(
+          width: MediaQuery.of(context).size.width,
+          height: 60,
+          child: Column(
+            children: <Widget>[
+              new CheckboxListTile(
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: Text('${subject[t]}', style: TextStyle(fontSize: 20)),
+                  value: results[index]['checkedList'][oIndex],
+                  onChanged: (bool) =>
+                      updateCheckboxStatus(bool, index, oIndex)),
+            ],
+          ));
+    } else {
       return Container();
     }
   }
@@ -365,76 +387,73 @@ class GoTestViewState extends State<NewRouteGoTest> {
         width: index == nowIndex ? MediaQuery.of(context).size.width : 0.0,
         height: index == nowIndex ? MediaQuery.of(context).size.height : 0.0,
         alignment: Alignment.centerLeft,
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
-            Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '${index + 1}.${subject['subjectName']}',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                //我用IOS模拟器测试的时候,不设置亲和力,默认值是platform，按钮展示在文字后面,很丑啊
-                new RadioListTile<String>(
-                  title: Text('${subject['optionA']}'),
-                  value: 'A',
-                  groupValue: results[index]['result'],
-                  onChanged: (String e) => updateGroupValue(e, index),
-                ),
-                new RadioListTile<String>(
-                  title: Text('${subject['optionB']}'),
-                  value: 'B',
-                  groupValue: results[index]['result'],
-                  onChanged: (String e) => updateGroupValue(e, index),
-                ),
-                
-                getDanxuanOption(subject,'C',index),
-                getDanxuanOption(subject,'D',index),
-                getDanxuanOption(subject,'E',index),
-                getDanxuanOption(subject,'F',index),
-                getDanxuanOption(subject,'G',index),
-                getDanxuanOption(subject,'H',index),
-                Container(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      RaisedButton(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text("上一题"),
-                        color: Theme.of(context).primaryColor,
-                        textColor: Colors.white,
-                        onPressed: goPrev,
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 30.0),
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text("下一题"),
-                          color: Theme.of(context).primaryColorDark,
-                          textColor: Colors.white,
-                          onPressed: () {
-                            goNext();
-                          },
-                        ),
-                      ),
-                    ],
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '${index + 1}.${subject['subjectName']}',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
                   ),
                 ),
-              ],
-            ),
-          ),
-        ]));
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    getDanxuanOption(subject, 'A', index),
+                    getDanxuanOption(subject, 'B', index),
+                    getDanxuanOption(subject, 'C', index),
+                    getDanxuanOption(subject, 'D', index),
+                    getDanxuanOption(subject, 'E', index),
+                    getDanxuanOption(subject, 'F', index),
+                    getDanxuanOption(subject, 'G', index),
+                    getDanxuanOption(subject, 'H', index),
+                    Container(
+                      padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          RaisedButton(
+                            padding: EdgeInsets.all(12.0),
+                            child: Text(
+                              "上一题",
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            color: Theme.of(context).primaryColor,
+                            textColor: Colors.white,
+                            onPressed: goPrev,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 30.0),
+                            child: RaisedButton(
+                              padding: EdgeInsets.all(12.0),
+                              child: Text("下一题",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  )),
+                              color: Theme.of(context).primaryColorDark,
+                              textColor: Colors.white,
+                              onPressed: () {
+                                goNext();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ]));
     return row;
   }
 
@@ -444,167 +463,152 @@ class GoTestViewState extends State<NewRouteGoTest> {
         width: index == nowIndex ? MediaQuery.of(context).size.width : 0.0,
         height: index == nowIndex ? MediaQuery.of(context).size.height : 0.0,
         alignment: Alignment.centerLeft,
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
-            Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '${index + 1}.${subject['subjectName']}',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                    width: subject['optionA'] != null
-                        ? MediaQuery.of(context).size.width
-                        : 0.0,
-                    height: subject['optionA'] != null ? 60 : 0.0,
-                    child: Column(
-                      children: <Widget>[
-                        new CheckboxListTile(
-                          controlAffinity: ListTileControlAffinity.leading,
-                          title:Text('${subject['optionA']}'),
-                          value: results[index]['checkedList'][0],
-                          onChanged: (bool) => updateCheckboxStatus(bool,index,0)),
-                      ],
-                    )),
-                    Container(
-                    width: subject['optionB'] != null
-                        ? MediaQuery.of(context).size.width
-                        : 0.0,
-                    height: subject['optionB'] != null ? 60 : 0.0,
-                    child: Column(
-                      children: <Widget>[
-                        new CheckboxListTile(
-                          controlAffinity: ListTileControlAffinity.leading,
-                          title:Text('${subject['optionB']}'),
-                          value: results[index]['checkedList'][1],
-                          onChanged: (bool) => updateCheckboxStatus(bool,index,1)),
-                      ],
-                    )),
-                    
-                getDuoxuanOption(subject,'C',index,2),
-                getDuoxuanOption(subject,'D',index,3),
-                getDuoxuanOption(subject,'E',index,4),
-                getDuoxuanOption(subject,'F',index,5),
-                getDuoxuanOption(subject,'G',index,6),
-                getDuoxuanOption(subject,'H',index,7),
-                
-                Container(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      RaisedButton(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text("上一题"),
-                        color: Theme.of(context).primaryColor,
-                        textColor: Colors.white,
-                        onPressed: goPrev,
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 30.0),
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text("下一题"),
-                          color: Theme.of(context).primaryColorDark,
-                          textColor: Colors.white,
-                          onPressed: () {
-                            goNext();
-                          },
-                        ),
-                      ),
-                    ],
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '${index + 1}.${subject['subjectName']}',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
                   ),
                 ),
-              ],
-            ),
-          ),
-        ]));
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    getDuoxuanOption(subject, 'A', index, 0),
+                    getDuoxuanOption(subject, 'B', index, 1),
+                    getDuoxuanOption(subject, 'C', index, 2),
+                    getDuoxuanOption(subject, 'D', index, 3),
+                    getDuoxuanOption(subject, 'E', index, 4),
+                    getDuoxuanOption(subject, 'F', index, 5),
+                    getDuoxuanOption(subject, 'G', index, 6),
+                    getDuoxuanOption(subject, 'H', index, 7),
+                    Container(
+                      padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          RaisedButton(
+                            padding: EdgeInsets.all(12.0),
+                            child: Text("上一题",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                )),
+                            color: Theme.of(context).primaryColor,
+                            textColor: Colors.white,
+                            onPressed: goPrev,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 30.0),
+                            child: RaisedButton(
+                              padding: EdgeInsets.all(12.0),
+                              child: Text("下一题",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  )),
+                              color: Theme.of(context).primaryColorDark,
+                              textColor: Colors.white,
+                              onPressed: () {
+                                goNext();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ]));
     return row;
   }
 
-getJianda(var subject, var index) {
+  getJianda(var subject, var index) {
     var row = Container(
-        padding: const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20,right:20),
+        padding:
+            const EdgeInsets.only(top: 8.0, bottom: 4.0, left: 20, right: 20),
         width: index == nowIndex ? MediaQuery.of(context).size.width : 0.0,
         height: index == nowIndex ? MediaQuery.of(context).size.height : 0.0,
         alignment: Alignment.centerLeft,
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
-            Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '${index + 1}.${subject['subjectName']}',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '${index + 1}.${subject['subjectName']}',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
+                  ),
+                ),
               ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 8.0, bottom:4.0),
-            // width:MediaQuery.of(context).size.width-50,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                
-                Container(
-                    child: Column(
+              Container(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                // width:MediaQuery.of(context).size.width-50,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                        child: Column(
                       children: <Widget>[
                         new TextField(
                           autofocus: true,
                           onChanged: (String e) => updateTextValue(e, index),
-                          maxLines: 5,//最大行数
+                          maxLines: 5, //最大行数
                           // decoration: new InputDecoration(
                           //   hintText: 'Type something',
                           // ),
                         ),
-                        
                       ],
                     )),
-                Container(
-                  padding: const EdgeInsets.only(top: 28.0, bottom: 4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      RaisedButton(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text("上一题"),
-                        color: Theme.of(context).primaryColor,
-                        textColor: Colors.white,
-                        onPressed: goPrev,
+                    Container(
+                      padding: const EdgeInsets.only(top: 28.0, bottom: 4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          RaisedButton(
+                            padding: EdgeInsets.all(12.0),
+                            child: Text("上一题",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                )),
+                            color: Theme.of(context).primaryColor,
+                            textColor: Colors.white,
+                            onPressed: goPrev,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 30.0),
+                            child: RaisedButton(
+                              padding: EdgeInsets.all(12.0),
+                              child: Text("下一题",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  )),
+                              color: Theme.of(context).primaryColorDark,
+                              textColor: Colors.white,
+                              onPressed: () {
+                                goNext();
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 30.0),
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text("下一题"),
-                          color: Theme.of(context).primaryColorDark,
-                          textColor: Colors.white,
-                          onPressed: () {
-                            goNext();
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-        ]));
+              ),
+            ]));
     return row;
   }
 
@@ -642,11 +646,10 @@ getJianda(var subject, var index) {
           itemBuilder: (BuildContext context, int position) {
             if (subjects[position]['subjectType'] == '0')
               return getDanxuan(subjects[position], position);
-            else if (subjects[position]['subjectType'] == '1'){
+            else if (subjects[position]['subjectType'] == '1') {
               // print(subjects[position]);
               return getDuoxuan(subjects[position], position);
-            }
-            else if (subjects[position]['subjectType'] == '2')
+            } else if (subjects[position]['subjectType'] == '2')
               return getJianda(subjects[position], position);
           });
     } else {
