@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   dio: ^2.1.0 
   fluttertoast: ^3.0.3
+  # flutter_statusbarcolor: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
